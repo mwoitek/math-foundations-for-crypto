@@ -1,0 +1,108 @@
+% Created 2024-06-25 Tue 19:40
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+\usepackage[american, english]{babel}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+\renewcommand{\labelitemi}{$\rhd$}
+\setlength\parindent{0pt}
+\setlist[itemize]{leftmargin=*}
+\setlist{nosep}
+\newcommand{\Mod}{\mathrm{mod}\:}
+\author{Marcio Woitek}
+\date{}
+\title{Modular Exponentiation}
+\hypersetup{
+ pdfauthor={Marcio Woitek},
+ pdftitle={Modular Exponentiation},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.8)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+\section*{Problem 1}
+\label{sec:org6314d71}
+\textbf{Answer:} \(47^{69}\:\Mod 143=125\)
+\section*{Problem 2}
+\label{sec:org1418c7d}
+\textbf{Answer:} \(15^{15}\:\Mod 14=15\)\\
+
+We begin by reducing the exponent. The first step is to compute the totient
+function for 14:
+\begin{equation}
+\varphi(14)=\varphi(2\cdot 7)=(2-1)(7-1)=6.
+\end{equation}
+Then, since 14 and 15 are relatively prime, we can write
+\begin{equation}
+15^{15}\equiv 15^3\quad(\Mod 14).
+\end{equation}
+Next, to reduce the third power of 15, we calculate the square of this number
+modulo 14:
+\begin{equation}
+15^2\equiv 15\cdot 15\equiv 1\cdot 1\equiv 1\quad(\Mod 14),
+\end{equation}
+where we've used the fact that 15 is congruent to 1 \(\Mod 14\). Hence:
+\begin{equation}
+15^{15}\equiv 15\cdot 15^2\equiv 15\quad(\Mod 14).
+\end{equation}
+We could reduce the above power one more time. However, we stop here since 15 is
+one of the options.
+\section*{Problem 3}
+\label{sec:orgaa166f9}
+\textbf{Answer:} The number of positive integers less than and relatively prime to \(N\).
+\section*{Problem 4}
+\label{sec:org9f22119}
+\textbf{Answer:} \(\varphi(p)=p-1\)
+\section*{Problem 5}
+\label{sec:orgc9c324f}
+\textbf{Answer:} \(\varphi(2717)=2160\)\\
+
+First, notice that 2717 can be factored as follows: \(2717=11\cdot 13\cdot 19\).
+Then, by using the multiplicative property of \(\varphi\), we can write
+\begin{equation}
+\varphi(2717)=\varphi(11\cdot 13\cdot 19)=(11-1)(13-1)(19-1)=2160.
+\end{equation}
+\section*{Problem 6}
+\label{sec:orge3a315a}
+\textbf{Answer:} \(\varphi(3^4)=54\)\\
+
+The formula for the totient of the \(k\)-th power of a prime \(p\) is
+\begin{equation}
+\varphi(p^k)=p^{k-1}(p-1).
+\end{equation}
+Applying this result for \(p=3\) and \(k=4\) yields
+\begin{equation}
+\varphi(3^4)=3^3(3-1)=27\cdot 2=54.
+\end{equation}
+\section*{Problem 7}
+\label{sec:org3192587}
+\textbf{Answer:} If the two numbers are relatively prime.
+\section*{Problem 8}
+\label{sec:org1b1b07c}
+\textbf{Answer:} Nothing reliable.
+\section*{Problem 9}
+\label{sec:org0b55b58}
+\textbf{Answer:} It may or may not exist to other bases.
+\section*{Problem 10}
+\label{sec:org0305ec0}
+\textbf{Answer:} A primitive root generates all numbers relatively prime to the
+modulus.
+\end{document}
