@@ -1,0 +1,189 @@
+% Created 2024-06-24 Mon 21:42
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+\usepackage[american, english]{babel}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+\renewcommand{\labelitemi}{$\rhd$}
+\setlength\parindent{0pt}
+\setlist[itemize]{leftmargin=*}
+\setlist{nosep}
+\newcommand{\Mod}{\mathrm{mod}\:}
+\author{Marcio Woitek}
+\date{}
+\title{Integer Foundation}
+\hypersetup{
+ pdfauthor={Marcio Woitek},
+ pdftitle={Integer Foundation},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.8)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+\section*{Problem 1}
+\label{sec:org629dde8}
+\textbf{Answer: \(819,990\)}\\
+
+\textbf{There's a problem with this question. All the options are wrong, i.e., there's
+no pair of relatively prime numbers. Then I had to get the correct answer by
+guessing.}\\
+
+It's simple to exclude all the options:
+\begin{itemize}
+\item \(91,343\): Both of these numbers are divisible by 7. To see this, first
+notice that \(91=70+21\). Then \(\frac{91}{7}=13\). Similarly, we can
+write \(343=350-7\). Hence: \(\frac{343}{7}=49\). Since 91 and 343 have a
+common prime factor of 7, they are not relatively prime.
+\item \(819,990\): These numbers are divisible by 3. If we add up the digits of
+819 we get 18, which is divisible by 3. Then 819 is divisible by 3. A similar
+argument applies to 990. Therefore, 819 and 990 have 3 as a common factor, and
+they're not relatively prime.
+\item \(796,982\): These numbers are clearly even. Since they have a common factor
+of 2, they're not relatively prime.
+\item \(527,612\): In this case, we compute the \(\mathrm{gcd}\) of 527 and 612.
+With the aid of the Euclidean algorithm, we obtain
+\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\(m\) & \(n\)\\
+\hline
+612 & 527\\
+527 & 85\\
+85 & 17\\
+17 & 0\\
+\hline
+\end{tabular}
+\end{center}
+So we have \(\gcd(527,612)=17\). This result makes it very clear that the
+numbers under consideration are not relatively prime.
+\section*{Problem 2}
+\label{sec:orgc6995e4}
+\textbf{Answer: 62}\\
+
+Applying the Euclidean algorithm, we get the following:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\(m\) & \(n\)\\
+\hline
+992 & 930\\
+930 & 62\\
+62 & 0\\
+\hline
+\end{tabular}
+\end{center}
+Then \(\gcd(930,992)=62\).
+\section*{Problem 3}
+\label{sec:org1cb3142}
+\textbf{Answer: \(-17,9\)}\\
+
+To find the congruent pair, we need to test each pair by actually doing the
+calculations. We're not going to present these calculations. But it turns out
+that the correct answer is \(-17,9\). This result can be verified as follows:
+\begin{equation}
+-17\equiv -17+2\cdot 13\equiv 9\quad(\Mod 13),
+\end{equation}
+where we've used the fact that any multiple of 13 is congruent to 0 (\(\Mod 13\)).
+\section*{Problem 4}
+\label{sec:orgc3d7c5a}
+\textbf{Answer: \(x\) is a multiple of half the modulus.}\\
+
+Recall that \(a\) and \(b\) are congruent modulo \(N\) when their
+difference \(a-b\) is divisible by \(N\). In this case, this difference is
+\(x-(-x)=2x\). Since \(N\) divides \(2x\), there's an integer \(k\) such
+that the following equation holds:
+\begin{equation}
+\frac{2x}{N}=k.
+\end{equation}
+Solving this equation for \(x\), we get
+\begin{equation}
+x=k\frac{N}{2}.
+\end{equation}
+Therefore, \(x\) is a multiple of half the modulus.
+\section*{Problem 5}
+\label{sec:org9f8cd24}
+\textbf{Answer: \(x\) must be relatively prime to \(N\).}
+\section*{Problem 6}
+\label{sec:orgbea2fab}
+\textbf{Answer: \(O(\log n)\) (where \(n\) is the smaller number).}
+\section*{Problem 7}
+\label{sec:org96a9e0e}
+\textbf{Answer: 3}\\
+
+We'll solve this problem by using the general version of the extended Euclidean
+algorithm. This algorithm will yield a solution to the equation
+\begin{equation}
+16x+47y=\gcd(16,47)=1.
+\end{equation}
+The table below contains all the results returned by the Euclidean algorithm.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\(m\) & \(n\) & \(q\) & \(r\) & \(s\) & \(t\) & \(\hat{s}\) & \(\hat{t}\)\\
+\hline
+47 & 16 & 2 & 15 & 1 & 0 & 0 & 1\\
+16 & 15 & 1 & 1 & 0 & 1 & 1 & -2\\
+15 & 1 & 15 & 0 & 1 & -2 & -1 & 3\\
+\hline
+\end{tabular}
+\end{center}
+The desired solution is in the last two columns of the last row: \(x=3\) and
+\(y=-1\). Hence:
+\begin{equation}
+16\cdot 3+47\cdot(-1)=1.
+\end{equation}
+Performing the modulo operation for both sides of this equation, we get
+\begin{equation}
+16\cdot 3\equiv 1\quad(\Mod 47).
+\end{equation}
+Clearly, in this case we have \(16^{-1}=3\).
+\section*{Problem 8}
+\label{sec:org81d53da}
+\textbf{Answer: -1}\\
+
+We'll solve this problem by using the general version of the extended Euclidean
+algorithm. This algorithm will yield a solution to the equation
+\begin{equation}
+219x+220y=\gcd(219,220)=1.
+\end{equation}
+The table below contains all the results returned by the Euclidean algorithm.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\(m\) & \(n\) & \(q\) & \(r\) & \(s\) & \(t\) & \(\hat{s}\) & \(\hat{t}\)\\
+\hline
+220 & 219 & 1 & 1 & 1 & 0 & 0 & 1\\
+219 & 1 & 219 & 0 & 0 & 1 & 1 & -1\\
+\hline
+\end{tabular}
+\end{center}
+The desired solution is in the last two columns of the last row: \(x=-1\) and
+\(y=1\). Hence:
+\begin{equation}
+219\cdot(-1)+220\cdot 1=1.
+\end{equation}
+Performing the modulo operation for both sides of this equation, we get
+\begin{equation}
+219\cdot(-1)\equiv 1\quad(\Mod 220).
+\end{equation}
+Clearly, in this case we have \(219^{-1}=-1\).
+\end{document}
