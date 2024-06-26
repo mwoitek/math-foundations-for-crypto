@@ -1,0 +1,179 @@
+#+AUTHOR: Marcio Woitek
+#+TITLE: Chinese Remainder Theorem
+#+DATE:
+#+LATEX_HEADER: \usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+#+LATEX_HEADER: \usepackage[american]{babel}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \usepackage[sc]{mathpazo}
+#+LATEX_HEADER: \linespread{1.05}
+#+LATEX_HEADER: \renewcommand{\labelitemi}{$\rhd$}
+#+LATEX_HEADER: \setlength\parindent{0pt}
+#+LATEX_HEADER: \setlist[itemize]{leftmargin=*}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \newcommand{\Mod}{\mathrm{mod}\:}
+#+OPTIONS: toc:nil
+#+STARTUP: hideblocks
+
+#+BEGIN_SRC latex
+\thispagestyle{empty}
+\pagestyle{empty}
+#+END_SRC
+
+* Problem 1
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( N=5\cdot 7\cdot 8\cdot 9=2520 \)
+
+* Problem 2
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (0,4,1,6) \)\\
+
+In this case, \( X=12345 \). It's simple to verify that
+\begin{align}
+X\:\Mod 5&=0,\\
+X\:\Mod 7&=4,\\
+X\:\Mod 8&=1,\\
+X\:\Mod 9&=6.
+\end{align}
+Therefore, the CRT representation of \( X \) is \( (0,4,1,6) \).
+
+* Problem 3
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* It is divisible by both 5 and 8, but may be divisible by other prime
+factors as well.\\
+
+To be sure, let's derive the congruence relation that this integer must satisfy.
+In this case, the moduli are \( M_1=5 \), \( M_2=7 \), \( M_3=8 \) and \( M_4=9 \).
+It's straightforward to compute the corresponding coefficients \( A_i \).
+They're given by
+\begin{align}
+A_1&=2016,\\
+A_2&=1800,\\
+A_3&=945,\\
+A_4&=280.
+\end{align}
+Then \( X \) satisfies
+\begin{equation}
+X\equiv A_1 R_1+A_2 R_2+A_3 R_3+A_4 R_4\equiv 2016\,R_1+1800\,R_2+945\,R_3+280\,R_4\quad(\Mod 2520).
+\end{equation}
+Next, we use the CRT representation of \( X \). By substituting the values of
+\( R_i \) into the last formula, we get
+\begin{equation}
+X\equiv 480\quad(\Mod 2520).
+\end{equation}
+For concreteness, let's assume that \( X=480 \). One can easily check the
+following facts about this number:
+- it is divisible by 5;
+- it is divisible by 8;
+- it is divisible by 40;
+- since it is clearly even, it is also divisible by 2.
+These facts allow us to exclude three of the options. The only remaining option
+must be the correct one.
+
+* Problem 4
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (9,16,35) \)\\
+
+This is the only option such that the product of the moduli equals 5040, and the
+moduli are pair-wise coprime.
+
+* Problem 5
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* 10\\
+
+It's straightforward to show that, for these moduli, the congruence relation
+that \( X \) must satisfy can be written as
+\begin{equation}
+X\equiv 15\,R_1+10\,R_2+6\,R_3\quad(\Mod 30),
+\end{equation}
+where \( R_1 \), \( R_2 \) and \( R_3 \) are the residues corresponding to the
+moduli 2, 3 and 5, respectively.
+
+* Problem 6
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* 4\\
+
+It's straightforward to show that, for these moduli, the congruence relation
+that \( X \) must satisfy can be written as
+\begin{equation}
+X\equiv 288\,R_1+441\,R_2+280\,R_3\quad(\Mod 504),
+\end{equation}
+where \( R_1 \), \( R_2 \) and \( R_3 \) are the residues corresponding to the
+moduli 7, 8 and 9, respectively. By substituting the values of these residues
+into the above expression, we obtain
+\begin{equation}
+X\equiv 4\quad(\Mod 504).
+\end{equation}
+
+* Problem 7
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (5,7,3) \)\\
+
+For these moduli, the CRT representation of 12345 is \( (4,1,6) \). The integer
+82734 is represented by \( (1,6,6) \). Then the representation of the sum of
+these numbers is
+\begin{equation}
+((4+1)\:\Mod 7,(1+6)\:\Mod 8,(6+6)\:\Mod 9)=(5,7,3).
+\end{equation}
+
+* Problem 8
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (4,6,0) \)\\
+
+For these moduli, the CRT representation of 12345 is \( (4,1,6) \). The integer
+82734 is represented by \( (1,6,6) \). Then the representation of the product of
+these numbers is
+\begin{equation}
+((4\cdot 1)\:\Mod 7,(1\cdot 6)\:\Mod 8,(6\cdot 6)\:\Mod 9)=(4,6,0).
+\end{equation}
+
+* Problem 9
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (5,5,1) \)\\
+
+For these moduli, the CRT representation of 46189 is \( (3,5,1) \). It's simple
+to check that the following is true:
+- 5 is the multiplicative inverse of 3 modulo 7;
+- 5 is the multiplicative inverse of 5 modulo 8;
+- 1 is the multiplicative inverse of 1 modulo 9.
+Therefore, the multiplicative inverse of 46189 is represented by \( (5,5,1) \).
+
+* Problem 10
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* \( (2,1,0) \)\\
+
+We already know that, for these moduli, 12345 is represented by \( (4,1,6) \).
+Then the representation of its fifth power can be computed as follows:
+\begin{equation}
+(4^5\:\Mod 7,1^5\:\Mod 8,6^5\:\Mod 9)=(2,1,0).
+\end{equation}
