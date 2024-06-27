@@ -1,0 +1,76 @@
+#+AUTHOR: Marcio Woitek
+#+TITLE: Course Project
+#+DATE:
+#+LATEX_HEADER: \usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+#+LATEX_HEADER: \usepackage[american]{babel}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \usepackage[sc]{mathpazo}
+#+LATEX_HEADER: \linespread{1.05}
+#+LATEX_HEADER: \renewcommand{\labelitemi}{$\rhd$}
+#+LATEX_HEADER: \setlength\parindent{0pt}
+#+LATEX_HEADER: \setlist[itemize]{leftmargin=*}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \newcommand{\Mod}{\mathrm{mod}\:}
+#+OPTIONS: toc:nil
+#+STARTUP: hideblocks
+
+#+BEGIN_SRC latex
+\thispagestyle{empty}
+\pagestyle{empty}
+#+END_SRC
+
+* Problem 1
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* 115\\
+
+As explained, the ciphertext can be computed as follows:
+\begin{equation}
+c=m^e\:\Mod n.
+\end{equation}
+In this case, we have \( m=15 \), \( e=7 \) and \( n=143 \). Hence:
+\begin{equation}
+c=15^7\:\Mod 143=115.
+\end{equation}
+
+* Problem 2
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:*
+- 2
+- 61
+- 461\\
+
+215 is not prime, since it is clearly divisible by 5.
+
+* Problem 3
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:*
+- \( 122=2\cdot 61 \)
+- \( 922=2\cdot 461 \)\\
+
+The other two integers are the product of three prime numbers:
+\( 13115=5\cdot 43\cdot 61 \), \( 99115=5\cdot 43\cdot 461 \).
+
+* Problem 4
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+*Answer:* 460
+
+\begin{equation}
+\varphi(922)=\varphi(2\cdot 461)=(2-1)(461-1)=460
+\end{equation}
+
+# Local Variables:
+# ispell-alternate-dictionary: "american"
+# End:
