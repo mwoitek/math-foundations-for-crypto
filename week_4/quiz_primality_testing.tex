@@ -1,0 +1,91 @@
+% Created 2024-06-28 Fri 16:47
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+\usepackage[american, english]{babel}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+\renewcommand{\labelitemi}{$\rhd$}
+\setlength\parindent{0pt}
+\setlist[itemize]{leftmargin=*}
+\setlist{nosep}
+\newcommand{\Mod}{\mathrm{mod}\:}
+\date{}
+\title{Primality Testing}
+\hypersetup{
+ pdfauthor={Marcio Woitek},
+ pdftitle={Primality Testing},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.8)}, 
+ pdflang={English}}
+\begin{document}
+
+\thispagestyle{empty}
+\pagestyle{empty}
+\section*{Problem 1}
+\label{sec:orgb54f7fe}
+
+\textbf{Answer:} 1 in 700.\\
+
+The smallest 300-digit number is \(n=10^{299}\). Then the probability is
+approximately
+\begin{equation}
+P\approx\frac{1}{\ln(n)}=\frac{1}{\ln\left(10^{299}\right)}=\frac{1}{299\,\ln(10)}.
+\end{equation}
+Since \(\ln(10)\approx 2.3\), we can write
+\begin{equation}
+P\approx\frac{1}{299\cdot 2.3}=\frac{1}{687.7}.
+\end{equation}
+Therefore, the probability is close to 1 in 700.
+\section*{Problem 2}
+\label{sec:org89e0283}
+
+\textbf{Answer:} All prime numbers that are no greater than the square root of \(N\).
+\section*{Problem 3}
+\label{sec:orga4cbe57}
+
+\textbf{Answer:} the General Number Field Sieve.
+\section*{Problem 4}
+\label{sec:orgb0b2607}
+
+\textbf{Answer:} Carmichael numbers.
+\section*{Problem 5}
+\label{sec:org7437557}
+
+\textbf{Answer:} a Fermat witness to the compositeness of \(n\).
+\section*{Problem 6}
+\label{sec:orgedece32}
+
+\textbf{Answer:} a Fermat liar.
+\section*{Problem 7}
+\label{sec:org13d4624}
+
+\textbf{Answer:} that there are exactly two square roots of 1, namely 1 and \(N-1\),
+\((\Mod N)\).
+\section*{Problem 8}
+\label{sec:orgc66a54e}
+
+\textbf{Answer:} 174
+\section*{Problem 9}
+\label{sec:orgce4edc8}
+
+\textbf{Answer:} decreases as the size of the prime number sought increases.
+\section*{Problem 10}
+\label{sec:org005ecde}
+
+\textbf{Answer:} at least \(\frac{3}{4}\).
+\end{document}

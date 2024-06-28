@@ -1,0 +1,80 @@
+:PROPERTIES:
+:UNNUMBERED: notoc
+:END:
+
+#+AUTHOR: Marcio Woitek
+#+TITLE: Primality Testing
+#+LATEX_HEADER: \usepackage[a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+#+LATEX_HEADER: \usepackage[american]{babel}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \usepackage[sc]{mathpazo}
+#+LATEX_HEADER: \linespread{1.05}
+#+LATEX_HEADER: \renewcommand{\labelitemi}{$\rhd$}
+#+LATEX_HEADER: \setlength\parindent{0pt}
+#+LATEX_HEADER: \setlist[itemize]{leftmargin=*}
+#+LATEX_HEADER: \setlist{nosep}
+#+LATEX_HEADER: \newcommand{\Mod}{\mathrm{mod}\:}
+#+OPTIONS: ':t
+#+OPTIONS: author:nil
+#+OPTIONS: date:nil
+#+OPTIONS: title:nil
+#+OPTIONS: toc:nil
+#+STARTUP: hideblocks
+
+#+BEGIN_SRC latex
+\thispagestyle{empty}
+\pagestyle{empty}
+#+END_SRC
+
+* Problem 1
+
+*Answer:* 1 in 700.\\
+
+The smallest 300-digit number is \( n=10^{299} \). Then the probability is
+approximately
+\begin{equation}
+P\approx\frac{1}{\ln(n)}=\frac{1}{\ln\left(10^{299}\right)}=\frac{1}{299\,\ln(10)}.
+\end{equation}
+Since \( \ln(10)\approx 2.3 \), we can write
+\begin{equation}
+P\approx\frac{1}{299\cdot 2.3}=\frac{1}{687.7}.
+\end{equation}
+Therefore, the probability is close to 1 in 700.
+
+* Problem 2
+
+*Answer:* All prime numbers that are no greater than the square root of \( N \).
+
+* Problem 3
+
+*Answer:* the General Number Field Sieve.
+
+* Problem 4
+
+*Answer:* Carmichael numbers.
+
+* Problem 5
+
+*Answer:* a Fermat witness to the compositeness of \( n \).
+
+* Problem 6
+
+*Answer:* a Fermat liar.
+
+* Problem 7
+
+*Answer:* that there are exactly two square roots of 1, namely 1 and \( N-1 \),
+\( (\Mod N) \).
+
+* Problem 8
+
+*Answer:* 174
+
+* Problem 9
+
+*Answer:* decreases as the size of the prime number sought increases.
+
+* Problem 10
+
+*Answer:* at least \( \frac{3}{4} \).
